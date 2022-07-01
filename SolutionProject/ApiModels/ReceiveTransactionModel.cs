@@ -1,24 +1,19 @@
-﻿using AutoMapper;
-using SolutionProject.Common;
-using SolutionProject.Common.AutoMapping.Repository;
+﻿using SolutionProject.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SolutionProject.Services.BankModels.MoneyTransfer
+namespace SolutionProject.ApiModels
 {
-    public class MoneyTransferCreateServiceModel : MoneyTransferBaseServiceModel, IHaveCustomMapping
+    public class ReceiveTransactionModel
     {
         [MaxLength(ModelConstants.MoneyTransfer.DescriptionMaxLength)]
         public string Description { get; set; }
 
         [Required]
         public decimal Amount { get; set; }
-
-        [Required]
-        public string AccountId { get; set; }
 
         [Required]
         [MaxLength(ModelConstants.User.FullNameMaxLength)]
@@ -29,11 +24,20 @@ namespace SolutionProject.Services.BankModels.MoneyTransfer
         public string RecipientName { get; set; }
 
         [Required]
-        public DateTime MadeOn { get; set; } = DateTime.UtcNow;
+        [MaxLength(ModelConstants.BankAccount.UniqueIdMaxLength)]
+        public string SenderAccountUniqueId { get; set; }
 
         [Required]
-        [MaxLength(ModelConstants.BankAccount.UniqueIdMaxLength)]
-        public string Source { get; set; }
+        [MaxLength(ModelConstants.BankAccount.SwiftCodeMaxLength)]
+        public string DestinationBankSwiftCode { get; set; }
+
+        [Required]
+        [MaxLength(ModelConstants.BankAccount.NameMaxLength)]
+        public string DestinationBankName { get; set; }
+
+        [Required]
+        [MaxLength(ModelConstants.BankAccount.CountryMaxLength)]
+        public string DestinationBankCountry { get; set; }
 
         [Required]
         [MaxLength(ModelConstants.BankAccount.UniqueIdMaxLength)]
@@ -41,11 +45,5 @@ namespace SolutionProject.Services.BankModels.MoneyTransfer
 
         [Required]
         public string ReferenceNumber { get; set; }
-
-        public void ConfigureMapping(Profile mapper)
-        {
-            mapper.CreateMap<MoneyTransferCreateServiceModel, MoneyTransfer>()
-                .ForMember(dest => dest.Destination, opt => opt.MapFrom(src => src.DestinationBankAccountUniqueId));
-        }
     }
 }

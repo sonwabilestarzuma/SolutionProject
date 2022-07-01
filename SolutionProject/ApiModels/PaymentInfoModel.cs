@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SolutionProject.Common.AutoMapping.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;

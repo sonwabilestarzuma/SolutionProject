@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using SolutionProject.Data;
 using SolutionProject.Services.BankModels.BankAccount;
 using SolutionProject.Services.BankRepository.IRepository;

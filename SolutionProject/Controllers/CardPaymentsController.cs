@@ -1,7 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using SolutionProject.ApiModels;
+using SolutionProject.Common;
+using SolutionProject.Dtos;
+using SolutionProject.Helpers;
+using SolutionProject.Services.BankModels.Card;
+using SolutionProject.Services.BankRepository.IRepository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,7 +18,7 @@ namespace SolutionProject.Controllers
 {
     [Route("api/[controller]")]
     [IgnoreAntiforgeryToken]
-    [DecryptAndVerifyRequest]
+    //[DecryptAndVerifyRequest]
     [ApiController]
     public class CardPaymentsController : ControllerBase
     {

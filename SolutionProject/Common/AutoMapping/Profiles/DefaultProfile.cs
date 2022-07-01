@@ -20,7 +20,7 @@ namespace SolutionProject.Common.AutoMapping.Profiles
             // CentralApi should be extracted in separate sln file or at least it shouldn't share logic with BankSystem.Common
             // If we don't specify exactly the assemblies we want our tests might fail because not all assemblies are loaded on start up
             // since assemblies in .NET are lazy loaded
-            const string coreApiNamespace = "CoreApi";
+            const string centralApiNamespace = "CoreApi";
             var allTypes = AppDomain
                 .CurrentDomain
                 .GetAssemblies()

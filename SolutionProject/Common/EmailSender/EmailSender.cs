@@ -15,6 +15,8 @@ namespace SolutionProject.Common.EmailSender
         public EmailSender(IOptions<SendGridConfiguration> options)
             => this.options = options.Value;
 
+        public object MailHelper { get; private set; }
+
         public async Task<bool> SendEmailAsync(string receiver, string subject, string htmlMessage)
             => await this.SendEmailAsync(GlobalConstants.BankSystemEmail, receiver, subject, htmlMessage);
 

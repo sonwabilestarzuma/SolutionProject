@@ -1,4 +1,9 @@
-﻿using System;
+﻿using SolutionProject.Common;
+using SolutionProject.Common.AutoMapping.Repository;
+using SolutionProject.Services.BankModels.MoneyTransfer;
+using SolutionProject.Services.BankRepository.IRepository;
+using SolutionProject.Services.CoreApi.Data.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;

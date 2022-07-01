@@ -1,4 +1,7 @@
-﻿using SolutionProject.Common;
+﻿using SolutionProject.Areas.MoneyTransfers.Models.Global.Create;
+using SolutionProject.Common;
+using SolutionProject.Common.AutoMapping.Repository;
+using SolutionProject.Services.BankModels.MoneyTransfer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

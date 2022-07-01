@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using SolutionProject.ApiModels;
+using SolutionProject.Services.BankModels.BankAccount;
+using SolutionProject.Services.BankModels.MoneyTransfer;
+using SolutionProject.Services.BankRepository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +14,7 @@ namespace SolutionProject.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [DecryptAndVerifyRequest]
+   
     [IgnoreAntiforgeryToken]
     public class ReceiveMoneyTransfersController : ControllerBase
     {

@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using SolutionProject.Areas.MoneyTransfers.Models.Global.Create;
 using SolutionProject.Common;
+using SolutionProject.Services.BankModels.BankAccount;
+using SolutionProject.Services.BankRepository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
